@@ -9,7 +9,22 @@ function writeCSV(filename, rows) {
   const csv = [
     headers.join(","), // header row
     ...rows.map((row) =>
-      headers.map((h) => `"${(row[h] ?? "").replace(/"/g, '""')}"`).join(",")
+      headers
+        .map((h) => {
+          let value = row[h];
+
+          // Convert arrays / objects safely
+          if (Array.isArray(value) || typeof value === "object") {
+            value = JSON.stringify(value);
+          }
+
+          if (value === null || value === undefined) {
+            value = "";
+          }
+
+          return `"${String(value).replace(/"/g, '""')}"`;
+        })
+        .join(",")
     ),
   ].join("\n");
 
