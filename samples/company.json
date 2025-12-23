@@ -1,0 +1,66 @@
+{
+  "companyUrl": "https://www.linkedin.com/company/example-company/",
+  "scrapedAt": "2025-01-10T10:45:00Z",
+  "employees": [
+    {
+      "name": "Amit Sharma",
+      "title": "Senior Software Engineer",
+      "profileUrl": "https://www.linkedin.com/in/amit-sharma/",
+      "location": "Bengaluru, India"
+    },
+    {
+      "name": "Priya Verma",
+      "title": "Engineering Manager",
+      "profileUrl": "https://www.linkedin.com/in/priya-verma/",
+      "location": "Hyderabad, India"
+    },
+    {
+      "name": "Rahul Mehta",
+      "title": "Backend Developer",
+      "profileUrl": "https://www.linkedin.com/in/rahul-mehta/",
+      "location": "Pune, India"
+    },
+    {
+      "name": "Sneha Iyer",
+      "title": "Product Manager",
+      "profileUrl": "https://www.linkedin.com/in/sneha-iyer/",
+      "location": "Mumbai, India"
+    },
+    {
+      "name": "Arjun Nair",
+      "title": "DevOps Engineer",
+      "profileUrl": "https://www.linkedin.com/in/arjun-nair/",
+      "location": "Remote"
+    },
+    {
+      "name": "Neha Kapoor",
+      "title": "UI Engineer",
+      "profileUrl": "https://www.linkedin.com/in/neha-kapoor/",
+      "location": "Gurugram, India"
+    },
+    {
+      "name": "Kunal Joshi",
+      "title": "Data Engineer",
+      "profileUrl": "https://www.linkedin.com/in/kunal-joshi/",
+      "location": "Bengaluru, India"
+    },
+    {
+      "name": "Pooja Singh",
+      "title": "Quality Assurance Engineer",
+      "profileUrl": "https://www.linkedin.com/in/pooja-singh/",
+      "location": "Noida, India"
+    },
+    {
+      "name": "Vikram Rao",
+      "title": "Staff Software Engineer",
+      "profileUrl": "https://www.linkedin.com/in/vikram-rao/",
+      "location": "Chennai, India"
+    },
+    {
+      "name": "Ananya Gupta",
+      "title": "Associate Software Engineer",
+      "profileUrl": "https://www.linkedin.com/in/ananya-gupta/",
+      "location": "Indore, India"
+    }
+  ]
+}

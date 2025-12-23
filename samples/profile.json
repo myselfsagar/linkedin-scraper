@@ -1,0 +1,28 @@
+{
+  "profileUrl": "https://www.linkedin.com/in/example-user/",
+  "scrapedAt": "2025-01-10T10:48:00Z",
+  "name": "Rahul Mehta",
+  "headline": "Backend Engineer | Node.js | MongoDB",
+  "location": "Pune, India",
+  "connections": "500+",
+  "experience": [
+    {
+      "company": "Example Technologies",
+      "title": "Backend Engineer",
+      "duration": "Jan 2023 – Present"
+    },
+    {
+      "company": "Startup Labs",
+      "title": "Software Engineer",
+      "duration": "Jul 2021 – Dec 2022"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Savitribai Phule Pune University",
+      "degree": "Bachelor of Engineering",
+      "duration": "2017 – 2021"
+    }
+  ],
+  "skills": ["JavaScript", "Node.js", "Express.js", "MongoDB", "REST APIs"]
+}

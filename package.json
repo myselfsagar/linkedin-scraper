@@ -1,0 +1,17 @@
+{
+  "name": "linkedin-scraper",
+  "version": "1.0.0",
+  "description": "LinkedIn Company & Profile Scraper",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "company": "node src/index.js company",
+    "profile": "node src/index.js profile"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.57.0"
+  }
+}
