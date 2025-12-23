@@ -34,38 +34,41 @@ npx playwright install
 
 ## Authentication
 
-LinkedIn requires login.
-This project uses pre-authenticated session cookies.
-
-Export cookies from a logged-in browser session and save them as:
-
-cookies/linkedin-cookies.json
-
-No credentials are stored or automated.
+- LinkedIn requires login.
+- This project uses pre-authenticated session cookies.
+- Export cookies from a logged-in browser session and save them as: cookies/linkedin-cookies.json
+- No credentials are stored or automated.
 
 ## Usage
 
-Company page
+### Company page
+
+```bash
 npm run company -- <company-url>
+```
 
-Profile page
+### Profile page
+
+```bash
 npm run profile -- <profile-url>
+```
 
-CSV Export (Bonus)
+## CSV Export
+
+- Creates CSV files in the output/ directory.
+- CSV generation is done after scraping and does not affect the scraping logic.
+
+```bash
 npm run company -- <url> --csv
 npm run profile -- <url> --csv
-
-Creates CSV files in the output/ directory.
-CSV generation is done after scraping and does not affect the scraping logic.
+```
 
 ## Notes & Limitations
 
-Only publicly visible data is extracted
+- Only publicly visible data is extracted
 
-Some company pages do not expose employee listings
+- Some company pages do not expose employee listings
 
-Missing fields are returned as null
+- Missing fields are returned as null
 
-Captchas or restricted pages are not bypassed
-
-## Author: Sagar Sahu
+## Author: Sagar Sahu @myselfsagar
