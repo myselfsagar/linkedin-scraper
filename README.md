@@ -66,9 +66,11 @@ npm run profile -- <url> --csv
 ## Notes & Limitations
 
 - Only publicly visible data is extracted
-
 - Some company pages do not expose employee listings
-
 - Missing fields are returned as null
+- For higher volumes (e.g., ~10,000 profiles/day), this scraper would be executed via multiple worker processes with controlled concurrency and rate limits per session.
 
-## Author: Sagar Sahu @myselfsagar
+## Author
+
+Sagar Sahu  
+LinkedIn: https://www.linkedin.com/in/myselfsagar/

@@ -2,37 +2,58 @@ async function parseCompanyEmployees(page) {
   return await page.evaluate(() => {
     const results = [];
 
-    // Generic approach: look for profile links inside people section
-    const profileLinks = Array.from(
-      document.querySelectorAll('a[href*="/in/"]')
-    );
+    // 1. Find all Profile Links (The most stable element)
+    const links = Array.from(document.querySelectorAll('a[href*="/in/"]'));
 
-    for (const link of profileLinks) {
-      const name = link.innerText?.trim() || null;
-      const profileUrl = link.href;
+    for (const link of links) {
+      if (results.length >= 10) break;
 
-      if (!name || name.length > 50) continue;
+      const name = link.innerText?.trim();
 
-      const card = link.closest("li, div");
-      const title =
-        card?.querySelector("div.text-body-medium")?.innerText?.trim() || null;
+      // Filter out garbage links (images, icons, empty text)
+      if (!name || name.length > 50 || name.includes("LinkedIn")) continue;
 
-      const cleanUrl = profileUrl.split("?")[0];
+      // 2. Traverse UP to find the Employee Card Container
+      // LinkedIn grid items are always <li> elements.
+      const card = link.closest("li");
 
-      const location =
-        card?.querySelector("div.text-body-small")?.innerText?.trim() || null;
+      if (!card) continue; // Skip if we can't find the container
+
+      // 3. Extract Title & Location using Scoped Selectors
+      // We look for text-body-medium (Title) and text-body-small (Location) INSIDE this card.
+
+      // Title: Usually the first 'text-body-medium' or specific class below the name
+      const titleEl =
+        card.querySelector(".artdeco-entity-lockup__subtitle") ||
+        card.querySelector("div.text-body-medium");
+
+      // Location: Usually 'text-body-small' or caption
+      const locationEl =
+        card.querySelector(".artdeco-entity-lockup__caption") ||
+        card.querySelector("div.text-body-small");
+
+      // Clean the URL
+      const cleanUrl = link.href.split("?")[0];
 
       results.push({
-        name,
-        title,
+        name: name,
+        title: titleEl ? titleEl.innerText.trim() : null,
         profileUrl: cleanUrl,
-        location,
+        location: locationEl ? locationEl.innerText.trim() : null,
       });
-
-      if (results.length >= 10) break;
     }
 
-    return results;
+    // Deduplicate by profileUrl (just in case)
+    const uniqueResults = [];
+    const seen = new Set();
+    for (const r of results) {
+      if (!seen.has(r.profileUrl)) {
+        seen.add(r.profileUrl);
+        uniqueResults.push(r);
+      }
+    }
+
+    return uniqueResults;
   });
 }
 

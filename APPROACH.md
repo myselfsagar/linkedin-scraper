@@ -70,12 +70,16 @@ This helps avoid detection and improves stability.
 
 ---
 
-## Bonus: CSV Export
+## CSV Export
 
 Scraped data can optionally be exported to CSV using a command-line flag.  
 This is implemented as a post-processing step and does not affect scraping behavior.
 
 ---
+
+## Scalability Note
+
+This implementation runs sequentially for simplicity. At larger scales (e.g., ~10,000 profiles/day), the same logic would be executed via worker processes consuming URLs from a queue, with strict per-session rate limits to avoid platform throttling.
 
 ## Summary
 
