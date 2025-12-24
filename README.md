@@ -34,10 +34,20 @@ npx playwright install
 
 ## Authentication
 
-- LinkedIn requires login.
+- LinkedIn requires login to access company and profile data.
 - This project uses pre-authenticated session cookies.
-- Export cookies from a logged-in browser session and save them as: cookies/linkedin-cookies.json
-- No credentials are stored or automated.
+- Cookies are **user-specific** and are **not included** in the repository.
+
+### Steps
+
+1. Log in to LinkedIn in your browser
+2. Export cookies for `linkedin.com` (using a browser extension e.g. EditThisCookie or Cookie-Editor)
+3. Export cookies in JSON format
+4. Save the file as:
+
+```bash
+cookies/linkedin-cookies.json
+```
 
 ## Usage
 
